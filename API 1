@@ -1,0 +1,27 @@
+{"isSuccess":true}
+
+const fetch = require('node-fetch');
+const createAccountUrl = 'https://customer-analytics-34146.my.salesforce-sites.com/services/apexrest/createAccount';
+
+const accountDetails = {
+    name: 'Gunjan',
+    email: 'gunjan0530.be21@chiktara.edu.in',
+    rollNumber: 2110990530, 
+    phone: '8572020778',
+};
+
+fetch(createAccountUrl, {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(accountDetails),
+})
+    .then((response) => response.json())
+    .then((data) => {
+        const accountNumber = data.accountNumber;
+        console.log(`Investment account created! Account number: ${accountNumber}`);
+    })
+    .catch((error) => {
+        console.error('Error creating investment account:', error);
+    });
