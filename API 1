@@ -1,6 +1,5 @@
 {"isSuccess":true}
 
-const fetch = require('node-fetch');
 const createAccountUrl = 'https://customer-analytics-34146.my.salesforce-sites.com/services/apexrest/createAccount';
 
 const accountDetails = {
