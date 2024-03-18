@@ -10,18 +10,3 @@ const accountDetails = {
     phone: '8572020778',
 };
 
-fetch(createAccountUrl, {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(accountDetails),
-})
-    .then((response) => response.json())
-    .then((data) => {
-        const accountNumber = data.accountNumber;
-        console.log(`Investment account created! Account number: ${accountNumber}`);
-    })
-    .catch((error) => {
-        console.error('Error creating investment account:', error);
-    });
